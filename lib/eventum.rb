@@ -37,5 +37,23 @@ module Eventum
 
       client
     end
+
+    # Points to a `streams` API client
+    #
+    # @return [Eventum::Client::Streams]
+    #
+    # @api public
+    def streams
+      @streams ||= Eventum::Client::Streams.new(self)
+    end
+
+    # Points to an `events` API client
+    #
+    # @return [Eventum::Client::Events]
+    #
+    # @api public
+    def events
+      @events ||= Eventum::Client::Events.new(self)
+    end
   end
 end

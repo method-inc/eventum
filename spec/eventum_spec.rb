@@ -34,6 +34,14 @@ RSpec.describe Eventum do
     it { expect { |b| subject.configure(&b) }.to yield_with_args(subject) }
   end
 
+  describe "#streams" do
+    it { expect(subject.streams).to be_a Eventum::Client::Streams }
+  end
+
+  describe "#events" do
+    it { expect(subject.events).to be_a Eventum::Client::Events }
+  end
+
   describe "::VERSION" do
     subject { described_class::VERSION }
 
