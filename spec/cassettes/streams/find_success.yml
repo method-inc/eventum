@@ -1,0 +1,105 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://192.168.59.103:2113/streams/awesomeness
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+      User-Agent:
+      - Faraday v0.9.1
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Access-Control-Allow-Methods:
+      - POST, DELETE, GET, OPTIONS
+      Access-Control-Allow-Headers:
+      - Content-Type, X-Requested-With, X-PINGOTHER, Authorization, ES-LongPoll, ES-ExpectedVersion,
+        ES-EventId, ES-EventType, ES-RequiresMaster, ES-HardDelete, ES-ResolveLinkTo,
+        ES-ExpectedVersion
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Expose-Headers:
+      - Location, ES-Position
+      Cache-Control:
+      - max-age=0, no-cache, must-revalidate
+      Vary:
+      - Accept
+      Etag:
+      - '"0;-43840953"'
+      Content-Type:
+      - application/json; charset=utf-8
+      Server:
+      - Mono-HTTPAPI/1.0
+      Date:
+      - Tue, 08 Sep 2015 21:08:48 GMT
+      Content-Length:
+      - '1332'
+      Keep-Alive:
+      - timeout=15,max=100
+    body:
+      encoding: UTF-8
+      string: |-
+        {
+          "title": "Event stream 'awesomeness'",
+          "id": "http://192.168.59.103:2113/streams/awesomeness",
+          "updated": "2015-09-08T18:46:11.011113Z",
+          "streamId": "awesomeness",
+          "author": {
+            "name": "EventStore"
+          },
+          "headOfStream": true,
+          "selfUrl": "http://192.168.59.103:2113/streams/awesomeness",
+          "eTag": "0;248368668",
+          "links": [
+            {
+              "uri": "http://192.168.59.103:2113/streams/awesomeness",
+              "relation": "self"
+            },
+            {
+              "uri": "http://192.168.59.103:2113/streams/awesomeness/head/backward/20",
+              "relation": "first"
+            },
+            {
+              "uri": "http://192.168.59.103:2113/streams/awesomeness/1/forward/20",
+              "relation": "previous"
+            },
+            {
+              "uri": "http://192.168.59.103:2113/streams/awesomeness/metadata",
+              "relation": "metadata"
+            }
+          ],
+          "entries": [
+            {
+              "title": "0@awesomeness",
+              "id": "http://192.168.59.103:2113/streams/awesomeness/0",
+              "updated": "2015-09-08T18:46:11.011113Z",
+              "author": {
+                "name": "EventStore"
+              },
+              "summary": "awesome-event",
+              "links": [
+                {
+                  "uri": "http://192.168.59.103:2113/streams/awesomeness/0",
+                  "relation": "edit"
+                },
+                {
+                  "uri": "http://192.168.59.103:2113/streams/awesomeness/0",
+                  "relation": "alternate"
+                }
+              ]
+            }
+          ]
+        }
+    http_version: 
+  recorded_at: Tue, 08 Sep 2015 21:08:48 GMT
+recorded_with: VCR 2.9.3

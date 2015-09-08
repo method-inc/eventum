@@ -1,0 +1,35 @@
+require: rubocop-rspec
+
+AllCops:
+  Exclude:
+    - Guardfile
+
+Style/AlignHash:
+  Enabled: true
+  EnforcedHashRocketStyle: table
+  EnforcedColonStyle: table
+
+Style/CollectionMethods:
+  Enabled: true
+
+Style/CommentAnnotation:
+  Enabled: false
+
+Style/Documentation:
+  Enabled: false
+
+Style/MethodCalledOnDoEndBlock:
+  Enabled: true
+
+Style/OptionHash:
+  Enabled: true
+
+Style/SingleLineBlockParams:
+  Enabled: false
+
+Style/StringLiterals:
+  Enabled: true
+  EnforcedStyle: double_quotes
+
+Style/SymbolArray:
+  Enabled: true
