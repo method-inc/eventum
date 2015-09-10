@@ -23,11 +23,10 @@ module Eventum
     # @return [Faraday::Response]
     #
     # @api private
-    def get(path:, body: nil, headers: nil)
+    def get(path:, headers: nil)
       connection.execute(
         method:  :get,
         path:    path,
-        body:    body,
         headers: headers
       )
     end
