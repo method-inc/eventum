@@ -17,12 +17,37 @@ module Eventum
     # Executes a GET request on the given path
     #
     # @param path [String] the path of the endpoint to request
+    # @param body [Hash] the body of the post request
+    # @param headers [Hash] the headers of the post request
     #
     # @return [Faraday::Response]
     #
     # @api private
-    def get(path)
-      connection.execute(method: :get, path: path, config: @config)
+    def get(path:, body: nil, headers: nil)
+      connection.execute(
+        method:  :get,
+        path:    path,
+        body:    body,
+        headers: headers
+      )
+    end
+
+    # Executes a POST request on the given path
+    #
+    # @param path [String] the path of the endpoint to request
+    # @param body [Hash] the body of the post request
+    # @param headers [Hash] the headers of the post request
+    #
+    # @return [Faraday::Response]
+    #
+    # @api private
+    def post(path:, body: nil, headers: nil)
+      connection.execute(
+        method:  :post,
+        path:    path,
+        body:    body,
+        headers: headers
+      )
     end
 
     # Points to an {Eventum::Connection} object
@@ -31,7 +56,7 @@ module Eventum
     #
     # @api private
     def connection
-      @connection ||= Eventum::Connection.new
+      @connection ||= Eventum::Connection.new(@config)
     end
   end
 end

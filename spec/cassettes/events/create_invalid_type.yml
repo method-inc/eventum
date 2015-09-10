@@ -1,0 +1,99 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: http://192.168.59.103:2113/streams/awesomeness
+    body:
+      encoding: UTF-8
+      string: '{"eventId":null,"data":{"msg":"I''m an event"}}'
+    headers:
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+      Es-Eventtype:
+      - ''
+      User-Agent:
+      - Faraday v0.9.1
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 307
+      message: Temporary Redirect
+    headers:
+      Access-Control-Allow-Methods:
+      - POST, DELETE, GET, OPTIONS
+      Access-Control-Allow-Headers:
+      - Content-Type, X-Requested-With, X-PINGOTHER, Authorization, ES-LongPoll, ES-ExpectedVersion,
+        ES-EventId, ES-EventType, ES-RequiresMaster, ES-HardDelete, ES-ResolveLinkTo,
+        ES-ExpectedVersion
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Expose-Headers:
+      - Location, ES-Position
+      Location:
+      - http://192.168.59.103:2113/streams/awesomeness/incoming/13f08998-e980-455a-b1e8-b5722b048f2d
+      Content-Type:
+      - text/plain; charset=utf-8
+      Server:
+      - Mono-HTTPAPI/1.0
+      Date:
+      - Thu, 10 Sep 2015 16:17:18 GMT
+      Content-Length:
+      - '28'
+      Keep-Alive:
+      - timeout=15,max=100
+    body:
+      encoding: UTF-8
+      string: Forwarding to idempotent URI
+    http_version: 
+  recorded_at: Thu, 10 Sep 2015 16:17:16 GMT
+- request:
+    method: post
+    uri: http://192.168.59.103:2113/streams/awesomeness/incoming/13f08998-e980-455a-b1e8-b5722b048f2d
+    body:
+      encoding: UTF-8
+      string: '{"eventId":null,"data":{"msg":"I''m an event"}}'
+    headers:
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+      Es-Eventtype:
+      - ''
+      User-Agent:
+      - Faraday v0.9.1
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 400
+      message: Empty eventType provided.
+    headers:
+      Access-Control-Allow-Methods:
+      - GET, POST, OPTIONS
+      Access-Control-Allow-Headers:
+      - Content-Type, X-Requested-With, X-PINGOTHER, Authorization, ES-LongPoll, ES-ExpectedVersion,
+        ES-EventId, ES-EventType, ES-RequiresMaster, ES-HardDelete, ES-ResolveLinkTo,
+        ES-ExpectedVersion
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Expose-Headers:
+      - Location, ES-Position
+      Content-Type:
+      - ''
+      Server:
+      - Mono-HTTPAPI/1.0
+      Date:
+      - Thu, 10 Sep 2015 16:17:18 GMT
+      Content-Length:
+      - '0'
+      Connection:
+      - close
+    body:
+      encoding: UTF-8
+      string: ''
+    http_version: 
+  recorded_at: Thu, 10 Sep 2015 16:17:16 GMT
+recorded_with: VCR 2.9.3
