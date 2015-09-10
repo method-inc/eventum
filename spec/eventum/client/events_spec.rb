@@ -56,6 +56,14 @@ RSpec.describe Eventum::Client::Events do
     it { is_expected.to_not be_nil }
     it { expect(subject.status).to eq 201 }
 
+    context "when the event includes nested objects" do
+      let(:cassette) { "events/create_nested" }
+      let(:event_data) { { title: "Hi World", nested: { msg: "I'm inside" } } }
+
+      it { is_expected.to_not be_nil }
+      it { expect(subject.status).to eq 201 }
+    end
+
     context "when no event type is provided" do
       let(:cassette) { "events/create_invalid_type" }
       let(:event_type) { "" }
