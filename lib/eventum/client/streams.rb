@@ -19,7 +19,7 @@ module Eventum
       #
       # @api public
       def find(name)
-        get("#{API_PATH}/#{name}")
+        get(path: "#{API_PATH}/#{name}")
       end
     end
   end
